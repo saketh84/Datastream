@@ -1,0 +1,214 @@
+/* PipelineBucket.css Stylesheet */
+
+/* ── Empty state ───────────────────────────────── */
+.bucket--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 24px;
+  border: 1.5px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: #0d0e13;
+}
+
+.bucket__empty-icon {
+  font-size: 32px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.bucket__empty-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.bucket__empty-sub {
+  font-size: 13px;
+  color: #4b5563;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Filled bucket ─────────────────────────────── */
+.bucket {
+  background: #0d0e13;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.bucket__flow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Step card ─────────────────────────────────── */
+.bucket__step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 11px;
+  border: 1.5px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.25s, background 0.25s;
+}
+
+/* color tints */
+.bucket__step--green  { border-color: rgba(16, 185, 129, 0.25); }
+.bucket__step--blue   { border-color: rgba(59, 130, 246, 0.25); }
+.bucket__step--red    { border-color: rgba(239, 68, 68, 0.25); }
+.bucket__step--yellow { border-color: rgba(245, 158, 11, 0.25); }
+.bucket__step--gray   { border-color: rgba(107, 114, 128, 0.25); }
+
+/* status overrides */
+.bucket__step--running {
+  border-color: rgba(251, 191, 36, 0.5) !important;
+  background: rgba(251, 191, 36, 0.06) !important;
+}
+.bucket__step--done {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  background: rgba(16, 185, 129, 0.06) !important;
+}
+.bucket__step--error {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  background: rgba(239, 68, 68, 0.06) !important;
+}
+
+/* Step number */
+.bucket__num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #4b5563;
+  font-variant-numeric: tabular-nums;
+  min-width: 20px;
+}
+
+/* Icon bubble */
+.bucket__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.bucket__icon--green  { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.bucket__icon--blue   { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.bucket__icon--red    { background: rgba(239, 68, 68, 0.15);  color: #f87171; }
+.bucket__icon--yellow { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.bucket__icon--gray   { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+
+/* Spinner inside icon */
+.bucket__spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(251, 191, 36, 0.25);
+  border-top-color: #fbbf24;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Label */
+.bucket__label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* Status badge */
+.bucket__badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+.bucket__badge--done    { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.bucket__badge--error   { background: rgba(239, 68, 68, 0.2);  color: #f87171; }
+.bucket__badge--running { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+
+/* Reorder / remove buttons */
+.bucket__actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.bucket__step:hover .bucket__actions {
+  opacity: 1;
+}
+
+.bucket__btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.bucket__btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+}
+
+.bucket__btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.bucket__btn--remove:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Arrow between steps */
+.bucket__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  padding: 0 6px;
+  animation: pulse-arrow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-arrow {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50%       { opacity: 1;   transform: translateX(3px); }
+}
+
+/* Run log */
+.bucket__log {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #080a0f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bucket__log-line { margin: 0; }
+.bucket__log-line--done    { color: #34d399; }
+.bucket__log-line--error   { color: #f87171; }
+.bucket__log-line--running { color: #fbbf24; }

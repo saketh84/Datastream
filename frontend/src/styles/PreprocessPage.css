@@ -1,0 +1,132 @@
+/* --- Imports for Component Styles --- */
+@import "./MissingValueSelector.css";
+@import "./RecommendationCard.css";
+@import "./PipelinePreview.css";
+@import "./RunPipelineButton.css";
+@import "./OperationSelector.css";
+
+/* --- CSS Variables & Theme Definitions --- */
+:root {
+    --bg-primary: #0b0b0f;
+    --bg-secondary: #16181d;
+    --bg-card: #1a1d24;
+    --bg-hover: #21252e;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-light: rgba(255, 255, 255, 0.16);
+    --green-primary: #10b981;
+    --green-hover: #059669;
+    --green-glow: rgba(16, 185, 129, 0.3);
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --blue-primary: #3b82f6;
+    --yellow-primary: #f59e0b;
+    --red-primary: #ef4444;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* --- PreprocessPage Layout Styles --- */
+.preprocess-page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    padding: 40px;
+    animation: fadeIn 0.5s ease;
+}
+
+.preprocess-page .step-badge {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.preprocess-page .page-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #ffffff, #9ca3af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.preprocess-page .page-subtitle {
+    color: var(--text-secondary);
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.preprocess-page .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.preprocess-page .quality-score {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--green-primary);
+    text-shadow: 0 0 40px var(--green-glow);
+    animation: fadeIn 0.6s ease;
+}
+
+.preprocess-page .quality-label {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+    .preprocess-page .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .preprocess-page {
+        padding: 20px;
+    }
+
+    .preprocess-page .page-title {
+        font-size: 32px;
+    }
+
+    .preprocess-page .quality-score {
+        font-size: 28px;
+    }
+}

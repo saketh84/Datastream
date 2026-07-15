@@ -1,0 +1,94 @@
+.missing-selector {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+}
+
+.missing-selector .selector-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.missing-selector .selector-subtitle {
+    color: var(--text-secondary);
+    margin-top: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.missing-selector .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.missing-selector .option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.missing-selector .option-item:hover {
+    border-color: var(--border-light);
+    background: var(--bg-hover);
+}
+
+.missing-selector .option-item.selected {
+    border-color: var(--green-primary);
+    background: rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.missing-selector .option-item .option-left {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.missing-selector .option-item .option-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.missing-selector .option-item.selected .option-icon {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.missing-selector .option-item .option-title {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.missing-selector .option-item .option-desc {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.missing-selector .option-item .option-radio {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--green-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.missing-selector .option-item .option-radio:focus {
+    outline: 2px solid var(--green-primary);
+    outline-offset: 2px;
+}

@@ -1,0 +1,189 @@
+.recommendation-card {
+    margin-bottom: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.recommendation-card.selected {
+    border-color: var(--green-primary);
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+}
+
+.recommendation-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+}
+
+.recommendation-card .card-header:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.recommendation-card .operation-info {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.recommendation-card .operation-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.recommendation-card .operation-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.recommendation-card .operation-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.recommendation-card .card-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.recommendation-card .expand-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommendation-card .expand-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.recommendation-card .expand-content {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 24px;
+    background: var(--bg-card);
+    animation: fadeIn 0.3s ease;
+}
+
+.recommendation-card .expand-content .reason {
+    display: flex;
+    gap: 12px;
+}
+
+.recommendation-card .expand-content .reason-icon {
+    color: var(--blue-primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.recommendation-card .expand-content .reason-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue-primary);
+}
+
+.recommendation-card .expand-content .reason-text {
+    color: var(--text-secondary);
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.recommendation-card .expand-content .example {
+    margin-top: 16px;
+}
+
+.recommendation-card .expand-content .example-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.recommendation-card .expand-content .example-box {
+    margin-top: 8px;
+    padding: 12px 16px;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.recommendation-card .expand-content .warning {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(245, 158, 11, 0.08);
+    border-radius: 10px;
+    border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+.recommendation-card .expand-content .warning-icon {
+    color: var(--yellow-primary);
+    flex-shrink: 0;
+}
+
+.recommendation-card .expand-content .warning-title {
+    color: var(--yellow-primary);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.recommendation-card .expand-content .warning-text {
+    color: #fcd34d;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* --- Severity & Recommended Tags --- */
+.recommendation-card .tag {
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items: center;
+}
+
+.recommendation-card .tag.high {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red-primary);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.recommendation-card .tag.medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--yellow-primary);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+
+.recommendation-card .tag.low {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--green-primary);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.recommendation-card .tag.recommended {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-primary);
+    border: 1px solid var(--green-primary);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}

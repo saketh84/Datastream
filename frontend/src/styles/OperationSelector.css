@@ -1,0 +1,171 @@
+/* OperationSelector.css Stylesheet */
+
+.operation-selector {
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+}
+
+.operation-selector .selector-header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.operation-selector .selector-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.operation-selector .selector-subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.operation-selector .recommended-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-primary);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.operation-selector .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.operation-selector .option-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.operation-selector .option-item:hover {
+    border-color: var(--border-light);
+    background: var(--bg-hover);
+}
+
+.operation-selector .option-item.selected {
+    border-color: var(--green-primary);
+    background: rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+}
+
+.operation-selector .option-item .option-left {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.operation-selector .option-item .option-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+}
+
+.operation-selector .option-item.selected .option-icon {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-primary);
+}
+
+/* Operation Specific Icons */
+.operation-selector .option-item .option-icon.red { color: #f87171; background: rgba(239, 68, 68, 0.1); }
+.operation-selector .option-item .option-icon.yellow { color: #fbbf24; background: rgba(245, 158, 11, 0.1); }
+.operation-selector .option-item .option-icon.blue { color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+.operation-selector .option-item .option-icon.green { color: #34d399; background: rgba(16, 185, 129, 0.1); }
+
+.operation-selector .option-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.operation-selector .option-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.operation-selector .option-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.operation-selector .ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-primary);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.operation-selector .severity-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.operation-selector .severity-badge.severity-high {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--red-primary);
+}
+
+.operation-selector .severity-badge.severity-medium {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--yellow-primary);
+}
+
+.operation-selector .severity-badge.severity-low {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--green-primary);
+}
+
+.operation-selector .option-desc {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.operation-selector .option-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--green-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
