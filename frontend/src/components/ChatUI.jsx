@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 import useDashboardStore from '../store'; // Import your Zustand store
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = import.url.meta.env.VITE_API_URL;
 
 export default function ChatUI() {
   const [messages, setMessages] = useState([]);
