@@ -190,48 +190,7 @@ async def get_recommendations(file: UploadFile = File(...)):
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Failed processing dataset: {str(e)}")
 
-# ----------------------------
 # Endpoint 2: run workflow (pipeline builder)
-# ----------------------------
-# backend/app/main.py
-@app.post("/api/v1/chat-with-context")
-async def chat_with_context(
-    message: str = Form(...), 
-    context: str = Form(...) # This is the JSON string from our store
-):
-    try:
-        # Instead of reading a file, we tell the AI what the data looks like
-        # based on the analysis we ALREADY did.
-        if not context:
-            return {"reply": "No context provided."}
-            
-        parsed_context = json.loads(context)
-        prompt = f"""
-        The user is asking: "{message}"
-        Based on this data context already analyzed:
-        {parsed_context}
-        
-        Answer the question accurately. If you need to perform math, 
-        refer to the KPIs provided in the context.
-        """
-        
-        # Initialize LLM
-        api_key = os.getenv("XAI_API_KEY")
-        llm = ChatOpenAI(
-            model="llama-3.3-70b-versatile",
-            api_key=api_key,
-            openai_api_base="https://api.groq.com/openai/v1",
-            temperature=0
-        )
-        
-        # We just use a standard Chat completion
-        response = llm.invoke(prompt)
-        return {"reply": response.content}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-
 
 @app.post("/workflow/run/")
 async def run_workflow(payload: WorkflowRequest):
@@ -271,35 +230,6 @@ async def run_workflow(payload: WorkflowRequest):
         logging.error(f"Sequential production switch-case pipeline run failed: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-
-
-
-
-# backend/app/main.py
-
-@app.post("/api/v1/chat")
-async def chat_with_file(
-    file: UploadFile = File(...), 
-    message: str = Form(...) # Make sure this is 'message' or 'question'
-):
-    try:
-        # 1. Read the file
-        contents = await file.read()
-        df = read_uploaded_file_to_df(contents, file.filename)
-        
-        # 2. Create the Grok agent logic
-        initialize_live_chat_agent(df)
-        
-        # 3. Get the response
-        answer = ask_context_agent(message)
-
-        return {
-            "status": "success",
-            "reply": answer
-        }
-    except Exception as e:
-        print(f"Chat Error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/api/v1/sync_agent_data")
 async def sync_agent_data(payload: SyncAgentRequest):
