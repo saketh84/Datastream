@@ -8,10 +8,10 @@ DataStream is a full-stack, automated data engineering and AI synthesis workspac
 
 DataSream coordinates structural modifications and predictive parsing workflows seamlessly across client state-stores and runtime execution memory spaces.
 
-              +-----------------------------------+
-              |      React Frontend Client        |
-              |  (Vite + Zustand Global Store)   |
-              +-----------------------------------+
+              ---------------------------------------+
+              |      React Frontend Client           |
+              |  (Vite + Zustand Global Store)       |
+              +--------------------------------------+
                  /                             \
  1. Upload/Commit \                             / 4. Return Report Layout
  Preprocessed Data \                           /  & Interactive Panel States
@@ -28,6 +28,18 @@ DataSream coordinates structural modifications and predictive parsing workflows 
                     |     LangChain Groq    |
                     | (llama-3.3-70b Engine)|
                     +-----------------------+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Key Operational Workflow:
 1. **Ingestion & Prep:** The client commits clean tabular matrices inside the Preprocessing Canvas, synchronizing parameters inside the local Zustand global environment.
