@@ -6,7 +6,7 @@ DataStream is a full-stack, automated data engineering and AI synthesis workspac
 
 ## 🏗️ System Architecture & Data Flow
 
-DataForge coordinates structural modifications and predictive parsing workflows seamlessly across client state-stores and runtime execution memory spaces.
+DataSream coordinates structural modifications and predictive parsing workflows seamlessly across client state-stores and runtime execution memory spaces.
 
               +-----------------------------------+
               |      React Frontend Client        |
