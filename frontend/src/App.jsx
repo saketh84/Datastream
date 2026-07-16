@@ -3,11 +3,23 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import ToolkitPage from './pages/ToolkitPage';
 import DashboardPage from './pages/DashboardPage';
 import PreprocessPage from "./pages/PreprocessPage";
-import AIAnalysisPage from './pages/AIAnalysisPage'; // Sidebar will be inside this file
+import AIAnalysisPage from './pages/AIAnalysisPage';
 import UploadPage from './pages/UploadPage';
 import WorkspacePage from './pages/WorkspacePage';
 import ConverterPage from './pages/ConverterPage';
 import GoogleAnalyticsCallback from './pages/GoogleAnalyticsCallback';
+
+// Simple temporary 404 page fallback 
+function NotFound() {
+  return (
+    <div style={{ padding: '40px', textAlign: 'center', fontFamily: 'sans-serif' }}>
+      <h2>Page Not Found</h2>
+      <p>The page you are looking for doesn't exist.</p>
+      <a href="/home" style={{ color: '#2563EB', textDecoration: 'none' }}>Go back home</a>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <Routes>
@@ -29,7 +41,9 @@ export default function App() {
         path="/preprocess"
         element={<PreprocessPage />}
       />
-      <Route path="*" element={<Navigate to="/home" replace />} />
+
+      {/* CHANGED THIS LINE: Avoid direct redirect loops on local reload */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

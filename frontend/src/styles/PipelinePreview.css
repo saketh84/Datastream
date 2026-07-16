@@ -60,21 +60,37 @@
 }
 
 /* color tints */
-.bucket__step--green  { border-color: rgba(16, 185, 129, 0.25); }
-.bucket__step--blue   { border-color: rgba(59, 130, 246, 0.25); }
-.bucket__step--red    { border-color: rgba(239, 68, 68, 0.25); }
-.bucket__step--yellow { border-color: rgba(245, 158, 11, 0.25); }
-.bucket__step--gray   { border-color: rgba(107, 114, 128, 0.25); }
+.bucket__step--green {
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.bucket__step--blue {
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.bucket__step--red {
+  border-color: rgba(239, 68, 68, 0.25);
+}
+
+.bucket__step--yellow {
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.bucket__step--gray {
+  border-color: rgba(107, 114, 128, 0.25);
+}
 
 /* status overrides */
 .bucket__step--running {
   border-color: rgba(251, 191, 36, 0.5) !important;
   background: rgba(251, 191, 36, 0.06) !important;
 }
+
 .bucket__step--done {
   border-color: rgba(16, 185, 129, 0.5) !important;
   background: rgba(16, 185, 129, 0.06) !important;
 }
+
 .bucket__step--error {
   border-color: rgba(239, 68, 68, 0.5) !important;
   background: rgba(239, 68, 68, 0.06) !important;
@@ -99,11 +115,31 @@
   justify-content: center;
   flex-shrink: 0;
 }
-.bucket__icon--green  { background: rgba(16, 185, 129, 0.15); color: #34d399; }
-.bucket__icon--blue   { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.bucket__icon--red    { background: rgba(239, 68, 68, 0.15);  color: #f87171; }
-.bucket__icon--yellow { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-.bucket__icon--gray   { background: rgba(107, 114, 128, 0.15); color: #9ca3af; }
+
+.bucket__icon--green {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.bucket__icon--blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.bucket__icon--red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.bucket__icon--yellow {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.bucket__icon--gray {
+  background: rgba(107, 114, 128, 0.15);
+  color: #9ca3af;
+}
 
 /* Spinner inside icon */
 .bucket__spinner {
@@ -116,7 +152,11 @@
   animation: spin 0.7s linear infinite;
 }
 
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* Label */
 .bucket__label {
@@ -133,9 +173,21 @@
   padding: 2px 8px;
   border-radius: 100px;
 }
-.bucket__badge--done    { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-.bucket__badge--error   { background: rgba(239, 68, 68, 0.2);  color: #f87171; }
-.bucket__badge--running { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+
+.bucket__badge--done {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+.bucket__badge--error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.bucket__badge--running {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
 
 /* Reorder / remove buttons */
 .bucket__actions {
@@ -190,8 +242,17 @@
 }
 
 @keyframes pulse-arrow {
-  0%, 100% { opacity: 0.4; transform: translateX(0); }
-  50%       { opacity: 1;   transform: translateX(3px); }
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
 }
 
 /* Run log */
@@ -208,7 +269,18 @@
   gap: 4px;
 }
 
-.bucket__log-line { margin: 0; }
-.bucket__log-line--done    { color: #34d399; }
-.bucket__log-line--error   { color: #f87171; }
-.bucket__log-line--running { color: #fbbf24; }
+.bucket__log-line {
+  margin: 0;
+}
+
+.bucket__log-line--done {
+  color: #34d399;
+}
+
+.bucket__log-line--error {
+  color: #f87171;
+}
+
+.bucket__log-line--running {
+  color: #fbbf24;
+}

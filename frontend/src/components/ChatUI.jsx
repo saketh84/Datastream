@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Loader2 } from 'lucide-react';
 import useDashboardStore from '../store'; // Import your Zustand store
 
-const API_URL = import.url.meta.env.VITE_API_URL;
+const API_URL = "http://127.0.0.1:8000";
 
 export default function ChatUI() {
   const [messages, setMessages] = useState([]);
@@ -30,7 +30,7 @@ export default function ChatUI() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ dataset: rows }),
       });
-      
+
       if (response.ok) {
         setAgentReady(true);
         setMessages([
@@ -81,30 +81,7 @@ export default function ChatUI() {
   return (
     <div className="flex flex-col h-[600px] border border-gray-200 rounded-xl bg-slate-50 p-4">
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto space-y-4">
-        {messages.map((msg, index) => (
-          <div key={index} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <div className={`p-3 rounded-lg max-w-[80%] ${msg.role === 'user' ? 'bg-blue-600 text-white' : 'bg-white text-gray-800'}`}>
-              {msg.content}
-            </div>
-          </div>
-        ))}
-        {isLoading && <div className="text-sm text-gray-400 italic">Thinking...</div>}
-      </div>
 
-      {/* Input */}
-      <div className="mt-4 flex gap-2">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Ask a question..."
-          className="flex-1 p-3 border rounded-xl"
-          disabled={!agentReady || isLoading}
-        />
-        <button onClick={handleSend} className="bg-blue-600 text-white px-4 rounded-xl">Send</button>
-      </div>
     </div>
   );
 }

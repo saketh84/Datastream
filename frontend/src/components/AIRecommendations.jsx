@@ -3,7 +3,7 @@ import { Loader, AlertCircle, RefreshCw } from "lucide-react";
 import RecommendationCard from "./RecommendationCard";
 import "../styles/AIRecommendations.css";
 
-const API_URL = "import.url.meta.env.VITE_API_URL/api/v1/get_recommendations";|| 'http://127.0.0.1:8000/api/v1/get_recommendations';
+const API_URL = 'http://127.0.0.1:8000/api/v1/get_recommendations';
 
 const AIRecommendations = ({ file }) => {
   const [recommendations, setRecommendations] = useState([]);

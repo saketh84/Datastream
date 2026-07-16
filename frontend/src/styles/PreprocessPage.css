@@ -7,10 +7,10 @@
 
 /* --- CSS Variables & Theme Definitions --- */
 :root {
-    --bg-primary: #0b0b0f;
-    --bg-secondary: #16181d;
-    --bg-card: #1a1d24;
-    --bg-hover: #21252e;
+    --bg-primary: white;
+    --bg-secondary: white;
+    --bg-card: white;
+    --bg-hover: white;
     --border-color: rgba(255, 255, 255, 0.08);
     --border-light: rgba(255, 255, 255, 0.16);
     --green-primary: #10b981;
@@ -29,6 +29,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -39,6 +40,7 @@
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -46,10 +48,13 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.6;
         transform: scale(1);
     }
+
     50% {
         opacity: 1;
         transform: scale(1.05);
@@ -128,5 +133,9 @@
 
     .preprocess-page .quality-score {
         font-size: 28px;
+    }
+
+    .page-title {
+        color: green;
     }
 }

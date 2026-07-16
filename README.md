@@ -1,74 +1,116 @@
-# Data Analytics Platform
+# DataStream: Automated AI Data Analytics Platform
 
-This project appears to be a backend-only application (or the frontend is missing) built with **FastAPI**.
+DataStream is a full-stack, automated data engineering and AI synthesis workspace. It enables users to upload raw analytical datasets (CSV/Excel formats)and API URL, apply immediate algorithmic preprocessing modifications via a unified global store interface, and instantly compute deep structural reports, trend matrices, and executable chart scripts backed by an in-memory FastAPI analytics driver context and local client state persistence.
 
-## Prerequisites
+---
 
-- Python 3.9+
-- pip (Python package manager)
+## 🏗️ System Architecture & Data Flow
 
-## Project Structure
+DataForge coordinates structural modifications and predictive parsing workflows seamlessly across client state-stores and runtime execution memory spaces.
 
-- `backend/`: Contains the FastAPI application and source code.
-- `backend/requirements.txt`: Python dependencies.
-- `.env`: Environment variables configuration.
+              +-----------------------------------+
+              |      React Frontend Client        |
+              |  (Vite + Zustand Global Store)   |
+              +-----------------------------------+
+                 /                             \
+ 1. Upload/Commit \                             / 4. Return Report Layout
+ Preprocessed Data \                           /  & Interactive Panel States
+                    v                         v
+              +-----------------------------------+
+              |          FastAPI Server           |
+              |     (In-Memory State Context)     |
+              +-----------------------------------+
+                                |
+              2. Query Engine   |  3. Synthesize Structural JSON
+              Prompt Parameters |  Data Analysis
+                                v
+                    +-----------------------+
+                    |     LangChain Groq    |
+                    | (llama-3.3-70b Engine)|
+                    +-----------------------+
 
-## How to Run the Backend
+### Key Operational Workflow:
+1. **Ingestion & Prep:** The client commits clean tabular matrices inside the Preprocessing Canvas, synchronizing parameters inside the local Zustand global environment.
+2. **AI Synchronization:** The web application pushes raw data rows down to the FastAPI server layer, which dynamically assigns the metrics into the local application runtime workspace memory.
+3. **AI Generation:** The backend packages data frame context arrays directly into optimized LangChain Groq model prompts.
+4. **Layout Display:** The returned structured report format (narrative summaries, numeric observation trends, and graph code strings) is parsed straight into individual UI widgets on the analysis screen.
 
-1.  **Navigate to the project root**:
-    ```bash
-    cd /path/to/Mini_project-master
-    ```
+---
 
-2.  **Create a Virtual Environment** (Recommended):
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
+## 🛠️ Tech Stack Matrix
 
-3.  **Configure Environment Variables**:
-    The backend requires a Groq API key (free).
-    1.  Get a key at [https://console.groq.com](https://console.groq.com).
-    2.  Open the `.env` file in the root directory.
-    3.  Add your key: `GROQ_API_KEY=your_key_here`.
+### Frontend Interface
+* **Framework Engine:** React 18 (Vite Bundler Grid)
+* **Global Store Core:** Zustand (Decoupled Global State Sync Pipeline)
+* **Data Visualization Interface:** AG Grid Community Framework (`ag-grid-community`)
+* **Vector Assets:** Lucide React Icon Pack
 
-4.  **Install Dependencies**:
-    ```bash
-    pip install -r backend/requirements.txt
-    ```
-    *Note: You may need to upgrade pip first: `pip install --upgrade pip`*
+### Backend Architecture
+* **API Service Engine:** FastAPI (ASGI Python Native Framework Structure)
+* **Data Manipulation Engine:** Pandas & NumPy Processing Framework
+* **AI Orchestration Framework:** LangChain & `langchain-experimental` DataFrame Workers
+* **Inference Endpoint:** ChatGroq Infrastructure (`llama-3.3-70b-versatile`)
 
-4.  **Run the Server**:
-    One way is to run the main script directly (which uses uvicorn):
-    ```bash
-    # Make sure you are in the root directory
-    export PYTHONPATH=$PYTHONPATH:$(pwd)/backend
-    python backend/app/main.py
-    ```
-    
-    Alternatively, using uvicorn directly from the `backend` directory:
-    ```bash
-    cd backend
-    uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
-    ```
+---
 
-5.  **Access the API**:
-    Once running, open your browser to:
-    - Docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-    - Health Check: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+## ✨ Application Features
 
-## Notes
+* **Instant Synchronized Preprocessing:** Upload unstructured matrices, perform row drops, normalize column properties, and witness automated table validation updates.
+* **Auto-Triggered AI Insights Dashboard:** Eliminates manual text prompting by automatically computing data health narratives, anomaly detections, and observations as soon as the Zustand store updates.
+* **Dynamic Python Visualization Snippets:** Generates ready-to-execute Matplotlib and Seaborn plotting code matching the schema constraints of your uploaded file.
+* **Dual-View Layout Canvas:** Toggle between the active global table variables and historical report logs dynamically with an integrated side navigation tool deck.
 
-- The `frontend` directory is currently empty.
-- The `docker-compose.yml` files is currently empty.
-  how to run the frontend
-  cd frontend
-  npm run dev
-    
+---
 
-How to run the backend
+## 🚀 Installation & Initialization Guide
+
+### 1. Clone the Repository
+Open a terminal workspace and pull down the platform source directories:
+```bash
+git clone [https://github.com/yourusername/Mini_project-master.git](https://github.com/yourusername/Mini_project-master.git)
+cd Mini_project-master
+2. Configure Environment Variables
+Create a unified configuration layer inside the project root workspace directory.
+Create a file named .env in the root folder:
+Code snippet
+# Backend API Keys & Connections
+XAI_API_KEY=your_groq_api_key_here
+
+# Frontend Application Configs
+VITE_API_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
+Note: Generate your free infrastructure API inference access token directly at https://console.groq.com.
+3. Initialize the Backend Services
+Navigate to the backend service core folder:
+Bash
 cd backend
-./venv/bin/python -m uvicorn app.main:app --reload
-
-
-How to Install :.\venv\Scripts\activate pip install -r requirements.txt
+Create and switch on a locked runtime environment:
+Bash
+python -m venv venv
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows PowerShell:
+.\venv\Scripts\activate
+Upgrade the local setup manager and install dependencies:
+Bash
+pip install --upgrade pip
+pip install -r requirements.txt
+Run the development server process framework with live reloading:
+Bash
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+API Docs Access: Open http://127.0.0.1:8000/docs to view Swagger documentation.
+Status Health Checks: http://127.0.0.1:8000/
+4. Initialize the Frontend Workspace
+Open a new terminal matrix split window or panel, keeping the backend service active:
+Navigate to the frontend directory:
+Bash
+cd frontend
+Install the necessary node modules:
+Bash
+npm install
+Boot up the Vite rendering engine workspace server:
+Bash
+npm run dev
+Open the development link displayed in your terminal (typically http://localhost:5173) to begin working inside your local workspace.
+🤝 Troubleshooting & Validation Checks
+FastAPI Server Import Errors: If paths break, ensure you set your Python system path variable explicitly (export PYTHONPATH=$PYTHONPATH:$(pwd)/backend) or run the uvicorn script within your active virtual environment (./venv/bin/python -m uvicorn app.main:app --reload).
+CORS Network Blocks: The API initialization layer features robust CORS configuration handling standard local developer addresses out of the box. Verify that the port parameters inside VITE_API_URL exactly match your active FastAPI listening address

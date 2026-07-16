@@ -250,7 +250,7 @@ export default function DashboardView() {
         }}
       >
         <MessageSquare size={16} />
-        03 AI CHAT
+        03 AI Insights
         {activeSection === 'chat' && (
           <span style={{
             position: 'absolute',

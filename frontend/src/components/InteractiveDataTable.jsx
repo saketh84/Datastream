@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
+import { themeQuartz } from 'ag-grid-community';
 import { Search } from 'lucide-react';
 
-// Note: The CSS files are imported in main.jsx, so you don't need to import them here.
+const gridTheme = themeQuartz.withParams({
+  accentColor: '#0062ff',
+  borderRadius: 8,
+});
 
 export default function InteractiveDataTable({ rowData, columnDefs, onColumnHeaderClick }) {
   const [gridApi, setGridApi] = useState(null);
@@ -60,9 +64,9 @@ export default function InteractiveDataTable({ rowData, columnDefs, onColumnHead
       </div>
       
       {/* The AG Grid component wrapper */}
-      <div className="ag-theme-alpine" style={{ height: '100%', width: '100%' }}>
+      <div style={{ height: '100%', width: '100%', flexGrow: 1 }}>
         <AgGridReact
-          theme="legacy"
+          theme={gridTheme}
           rowData={rowData}
           columnDefs={columnDefs}
           onGridReady={onGridReady}
