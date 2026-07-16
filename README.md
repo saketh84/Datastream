@@ -8,26 +8,79 @@ DataStream is a full-stack, automated data engineering and AI synthesis workspac
 
 DataSream coordinates structural modifications and predictive parsing workflows seamlessly across client state-stores and runtime execution memory spaces.
 
-              ---------------------------------------+
-              |      React Frontend Client           |
-              |  (Vite + Zustand Global Store)       |
-              +--------------------------------------+
-                 /                             \
- 1. Upload/Commit \                             / 4. Return Report Layout
- Preprocessed Data \                           /  & Interactive Panel States
-                    v                         v
-              +-----------------------------------+
-              |          FastAPI Server           |
-              |     (In-Memory State Context)     |
-              +-----------------------------------+
-                                |
-              2. Query Engine   |  3. Synthesize Structural JSON
-              Prompt Parameters |  Data Analysis
-                                v
-                    +-----------------------+
-                    |     LangChain Groq    |
-                    | (llama-3.3-70b Engine)|
-                    +-----------------------+
+                                     ┌──────────────────────────────────────┐
+                                    │        React Frontend (Vite)         │
+                                    │--------------------------------------│
+                                    │ • Upload CSV                         │
+                                    │ • Data Cleaning UI                   │
+                                    │ • Prompt Configuration               │
+                                    │ • Interactive Report Dashboard       │
+                                    │ • Zustand Global Store               │
+                                    └──────────────────────────────────────┘
+                                                    │
+                         HTTP/JSON API              │
+                                                    ▼
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│                           FastAPI Backend Orchestrator                             │
+│------------------------------------------------------------------------------------│
+│                                                                                    │
+│  Upload API      Analysis API       Report API       Session Manager               │
+│                                                                                    │
+│                In-Memory DataFrame Context (Pandas)                                │
+│                                                                                    │
+│ • Stores cleaned dataset                                                           │
+│ • Maintains analysis state                                                         │
+│ • Generates statistical metadata                                                   │
+│ • Converts user parameters into structured prompt                                 │
+└────────────────────────────────────────────────────────────────────────────────────┘
+                                                    │
+                                Structured Analysis Context
+                                                    │
+                                                    ▼
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│                       Prompt Orchestration Layer (LangChain)                       │
+│------------------------------------------------------------------------------------│
+│                                                                                    │
+│ • Prompt Templates                                                                 │
+│ • System Instructions                                                              │
+│ • Context Injection                                                                │
+│ • DataFrame Summary Generation                                                     │
+│ • JSON Output Parser                                                               │
+│                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────┘
+                                                    │
+                                    Optimized Prompt
+                                                    ▼
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│                         Groq LLM Inference Engine                                  │
+│------------------------------------------------------------------------------------│
+│                                                                                    │
+│ Model : Llama-3.3-70B                                                              │
+│                                                                                    │
+│ • Pattern Detection                                                                │
+│ • Statistical Reasoning                                                            │
+│ • Trend Identification                                                             │
+│ • Business Insights                                                                │
+│ • Recommendation Generation                                                        │
+│                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────┘
+                                                    │
+                                  Structured JSON Report
+                                                    ▼
+┌────────────────────────────────────────────────────────────────────────────────────┐
+│                           React Visualization Layer                                │
+│------------------------------------------------------------------------------------│
+│                                                                                    │
+│ • Cards                                                                            │
+│ • Tables                                                                           │
+│ • Charts                                                                           │
+│ • Insights                                                                         │
+│ • Recommendations                                                                  │
+│ • Download Report                                                                  │
+│                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────┘
+
+
 
 
 
@@ -56,6 +109,13 @@ DataSream coordinates structural modifications and predictive parsing workflows 
 * **Global Store Core:** Zustand (Decoupled Global State Sync Pipeline)
 * **Data Visualization Interface:** AG Grid Community Framework (`ag-grid-community`)
 * **Vector Assets:** Lucide React Icon Pack
+* Presentation Layer (React + Zustand)
+API & Orchestration Layer (FastAPI)
+Data Processing Layer (Pandas/DataFrame context)
+LLM Orchestration Layer (LangChain)
+Inference Layer (Groq Llama-3.3-70B)
+Visualization Layer (Interactive dashboard)
+
 
 ### Backend Architecture
 * **API Service Engine:** FastAPI (ASGI Python Native Framework Structure)
@@ -71,10 +131,10 @@ DataSream coordinates structural modifications and predictive parsing workflows 
 * **Auto-Triggered AI Insights Dashboard:** Eliminates manual text prompting by automatically computing data health narratives, anomaly detections, and observations as soon as the Zustand store updates.
 * **Dynamic Python Visualization Snippets:** Generates ready-to-execute Matplotlib and Seaborn plotting code matching the schema constraints of your uploaded file.
 * **Dual-View Layout Canvas:** Toggle between the active global table variables and historical report logs dynamically with an integrated side navigation tool deck.
-
 ---
 
-## 🚀 Installation & Initialization Guide
+
+## 🚀 Installation & Initialization Guide 
 
 ### 1. Clone the Repository
 Open a terminal workspace and pull down the platform source directories:
