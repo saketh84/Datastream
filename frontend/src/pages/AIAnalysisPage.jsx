@@ -8,7 +8,7 @@ import {
 import Sidebar from '../components/Sidebar';
 import useDashboardStore from '../store'; // Import Zustand store
 
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL =import.url.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';;
 
 export default function AIAnalysisPage() {
   const [messages, setMessages] = useState([]);
